@@ -1,4 +1,6 @@
 import { Pool } from "pg";
+import dotenv from "dotenv";
+dotenv.config();
 
 const password = process.env.DATABASE_PASSWORD as string;
 
@@ -6,8 +8,7 @@ const password = process.env.DATABASE_PASSWORD as string;
 export const pool = new Pool({
   user: "postgres",
   host: "localhost",
-  database: "fitness",
+  database: "bettershape",
   password: password,
   port: 5432, // Default PostgreSQL port
 });
-

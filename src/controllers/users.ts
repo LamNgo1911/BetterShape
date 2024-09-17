@@ -21,4 +21,7 @@ const getUsers = async (req: Request, res: Response) => {
   }
 };
 
-module.exports = { createUser, getUsers };
+export const userController = {
+  createUser,
+  getUsers,
+};
