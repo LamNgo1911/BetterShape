@@ -13,8 +13,8 @@ const getASingleUser = async (id: string) => {
   return await userModel.getASingleUser(id);
 };
 
-const updateUser = async ({ id, name }: UserUpdateInput) => {
-  return await userModel.updateUser({ id, name });
+const updateUser = async (id: string, { name }: UserUpdateInput) => {
+  return await userModel.updateUser(id, { name });
 };
 
 const deleteUser = async (id: string) => {

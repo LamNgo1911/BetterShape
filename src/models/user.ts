@@ -22,7 +22,7 @@ const getASingleUser = async (id: string) => {
   return result.rows[0];
 };
 
-const updateUser = async ({ id, name }: UserUpdateInput) => {
+const updateUser = async (id: string, { name }: UserUpdateInput) => {
   const query = `UPDATE users 
   SET name = $1
   WHERE id = $2
