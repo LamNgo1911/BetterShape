@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon --watch 'src/**/*.ts' --exec ts-node src/app.ts"
+    "start": "node index.js",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec ts-node src/index.ts"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
