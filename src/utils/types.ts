@@ -73,14 +73,14 @@ export interface OrderInput {
   userId: string;
   productId: string;
   orderDate: string;
-  Total: number;
+  total: number;
 }
 
 export interface OrderUpdateInput {
-  name: string;
-  description: string;
-  image: string;
-  Total: number;
+  userId: string;
+  productId: string;
+  orderDate: string;
+  total: number;
 }
 
 // Transaction
