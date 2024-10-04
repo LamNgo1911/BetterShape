@@ -107,7 +107,6 @@ export interface NotificationInput {
 export interface NotificationUpdateInput {
   userId: string;
   notificationText: string;
-  createAt: Date;
 }
 
 // Message
