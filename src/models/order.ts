@@ -31,8 +31,8 @@ const updateOrder = async (
   id: string,
   { userId, productId, orderDate, total }: OrderUpdateInput
 ) => {
-  const query = `UPDATE orders SET name = $1, description = $2, price =
- $3, image = $4, stock = $5 WHERE id = $6 RETURNING *
+  const query = `UPDATE orders SET userId = $1, productId = $2, orderDate =
+ $3, total = $4 WHERE id = $5 RETURNING *
  `;
   const result = await pool.query(query, [
     userId,

@@ -38,8 +38,8 @@ const updateVideo = async (
   id: string,
   { program_id, title, description, url }: VideoUpdateInput
 ) => {
-  const query = `UPDATE videos SET name = $1, description = $2, price =
- $3, image = $4 WHERE id = $5 RETURNING *
+  const query = `UPDATE videos SET program_id = $1, title = $2, description =
+ $3, url = $4 WHERE id = $5 RETURNING *
  `;
   const result = await pool.query(query, [
     program_id,

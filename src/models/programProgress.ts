@@ -37,8 +37,8 @@ const updateProgress = async (
   id: string,
   { userId, progress, program_id }: ProgressUpdateInput
 ) => {
-  const query = `UPDATE progress SET name = $1, description = $2, price =
- $3, image = $4 WHERE id = $5 RETURNING *
+  const query = `UPDATE progress SET userId = $1, progress = $2, program_id =
+ $3 WHERE id = $4 RETURNING *
  `;
   const result = await pool.query(query, [userId, progress, program_id, id]);
   return result.rows[0];
