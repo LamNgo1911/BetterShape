@@ -123,6 +123,19 @@ export interface MessageUpdateInput {
   messageText: string;
 }
 
+// Coaching session
+export interface CoachingSessionInput {
+  sessionDate: string;
+  coachId: string;
+  clientId: string;
+}
+
+export interface CoachingSessionUpdateInput {
+  sessionDate: string;
+  coachId: string;
+  clientId: string;
+}
+
 // Session history
 export interface SessionHistoryInput {
   sessionId: string;
