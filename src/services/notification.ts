@@ -1,4 +1,4 @@
-import { notificationModel } from "../models/userNotification";
+import { notificationModel } from "../models/notification";
 import { NotificationInput, NotificationUpdateInput } from "../utils/types";
 
 const createNotification = async ({

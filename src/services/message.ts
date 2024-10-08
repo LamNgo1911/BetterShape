@@ -1,4 +1,4 @@
-import { messageModel } from "../models/userMessage";
+import { messageModel } from "../models/message";
 import { MessageInput, MessageUpdateInput } from "../utils/types";
 
 const createMessage = async ({

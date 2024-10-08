@@ -1,4 +1,4 @@
-import { coachingSessionModel } from "../models/userCoachingSession";
+import { coachingSessionModel } from "../models/coachingSession";
 import {
   CoachingSessionInput,
   CoachingSessionUpdateInput,

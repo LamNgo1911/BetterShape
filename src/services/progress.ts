@@ -1,4 +1,4 @@
-import { progressModel } from "../models/programProgress";
+import { progressModel } from "../models/progress";
 import { ProgressInput, ProgressUpdateInput } from "../utils/types";
 
 const createProgress = async ({
@@ -26,7 +26,9 @@ const updateProgress = async (
   { userId, progress, program_id }: ProgressUpdateInput
 ) => {
   return await progressModel.updateProgress(id, {
-    userId, progress, program_id
+    userId,
+    progress,
+    program_id,
   });
 };
 
