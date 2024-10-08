@@ -13,7 +13,7 @@ const createProgress = async ({
   });
 };
 
-const getProgresss = async () => {
+const getProgress = async () => {
   return await progressModel.getProgress();
 };
 
@@ -38,7 +38,7 @@ const deleteProgress = async (id: string) => {
 
 export const progressService = {
   createProgress,
-  getProgresss,
+  getProgress,
   getASingleProgress,
   updateProgress,
   deleteProgress,

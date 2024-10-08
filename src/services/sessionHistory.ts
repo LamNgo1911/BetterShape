@@ -11,7 +11,7 @@ const createSessionHistory = async ({
   });
 };
 
-const getSessionHistorys = async () => {
+const getSessionHistory = async () => {
   return await sessionHistoryModel.getSessionHistory();
 };
 
@@ -35,7 +35,7 @@ const deleteSessionHistory = async (id: string) => {
 
 export const sessionHistoryService = {
   createSessionHistory,
-  getSessionHistorys,
+  getSessionHistory,
   getASingleSessionHistory,
   updateSessionHistory,
   deleteSessionHistory,
