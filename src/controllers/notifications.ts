@@ -1,77 +1,74 @@
 import { Request, Response } from "express";
-import { orderService } from "../services/orders";
+import { notificationService } from "../services/notifications";
 
-const createOrder = async (req: Request, res: Response) => {
-  const { userId, productId, orderDate, total } = req.body;
+const createNotification = async (req: Request, res: Response) => {
+  const { userId, notificationText, createAt } = req.body;
 
   try {
-    const newOrder = await orderService.createOrder({
+    const newNotification = await notificationService.createNotification({
       userId,
-      productId,
-      orderDate,
-      total,
+      notificationText,
+      createAt,
     });
 
-    res.json(newOrder);
+    res.json(newNotification);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Failed to create order" });
+    res.status(500).json({ error: "Failed to create notification" });
   }
 };
 
-const getOrders = async (req: Request, res: Response) => {
+const getNotifications = async (req: Request, res: Response) => {
   try {
-    const orders = await orderService.getOrders();
+    const notifications = await notificationService.getNotifications();
 
-    res.json(orders);
+    res.json(notifications);
   } catch (error) {
-    res.status(500).json({ error: "Failed to fetch orders" });
+    res.status(500).json({ error: "Failed to fetch notifications" });
   }
 };
 
-const getASingleOrder = async (req: Request, res: Response) => {
+const getASingleNotification = async (req: Request, res: Response) => {
   const { id } = req.params;
   try {
-    const order = await orderService.getASingleOrder(id);
+    const notification = await notificationService.getASingleNotification(id);
 
-    res.json(order);
+    res.json(notification);
   } catch (error) {
-    res.status(500).json({ error: "Failed to fetch orders" });
+    res.status(500).json({ error: "Failed to fetch notifications" });
   }
 };
 
-const updateOrder = async (req: Request, res: Response) => {
-  const { userId, productId, orderDate, total } = req.body;
+const updateNotification = async (req: Request, res: Response) => {
+  const { userId, notificationText, createAt } = req.body;
   const { id } = req.params;
   try {
-    const order = await orderService.updateOrder(id, {
+    const notification = await notificationService.updateNotification(id, {
       userId,
-      productId,
-      orderDate,
-      total,
+      notificationText,
     });
 
-    res.json(order);
+    res.json(notification);
   } catch (error) {
-    res.status(500).json({ error: "Failed to fetch orders" });
+    res.status(500).json({ error: "Failed to fetch notifications" });
   }
 };
 
-const deleteOrder = async (req: Request, res: Response) => {
+const deleteNotification = async (req: Request, res: Response) => {
   const { id } = req.params;
   try {
-    const order = await orderService.deleteOrder(id);
+    const notification = await notificationService.deleteNotification(id);
 
-    res.json(order);
+    res.json(notification);
   } catch (error) {
-    res.status(500).json({ error: "Failed to fetch orders" });
+    res.status(500).json({ error: "Failed to fetch notifications" });
   }
 };
 
-export const orderController = {
-  createOrder,
-  getOrders,
-  getASingleOrder,
-  updateOrder,
-  deleteOrder,
+export const notificationController = {
+  createNotification,
+  getNotifications,
+  getASingleNotification,
+  updateNotification,
+  deleteNotification,
 };
